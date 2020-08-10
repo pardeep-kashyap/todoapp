@@ -1,0 +1,26 @@
+@import '../styles/variable.scss';
+
+.header-component{
+    background-color: $primary_color;
+    color: #fff;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid $primary_color;
+    margin-bottom: 10px;
+    div:last-child{
+        margin-left: auto;
+        display: flex;
+        align-items: center;
+        padding-right: 10px;
+    }
+    .tittle-section{
+        padding-left: 10px;
+        height: inherit;
+        display: flex;
+        align-items: center;
+    }
+    .MuiIcon-root{
+        font-size: 2em  ;
+    }
+}

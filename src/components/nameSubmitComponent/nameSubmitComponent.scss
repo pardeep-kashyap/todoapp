@@ -1,0 +1,23 @@
+@import './../styles/variable.scss';
+
+.NameSubmitComponentClass{
+    background: white;
+    width: 350px;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    form{
+        display: flex;
+        flex-direction: column;
+        width: calc(100% - 50px);
+        .MuiFormControl-root{
+            margin-top: 10px;
+        }
+        .MuiButtonBase-root{
+            margin-top: 25px;
+            background-color: $primary_color;
+            color: $white_color;        
+        }
+    }
+}

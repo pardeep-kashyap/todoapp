@@ -1,0 +1,58 @@
+@import './../styles//variable.scss';
+
+.addnew-container{
+    .text-box-section{
+        padding: 0px 10px 0 10px;
+        form{
+            display: flex;
+            justify-content: flex-start;
+            .MuiTextField-root{
+                width: 80%;
+            }
+            Button{
+                margin-left: 10px;
+                height: 35px;
+                align-self: flex-end
+            }    
+            .MuiButtonBase-root{
+                margin-top: 25px;
+                background-color: $link_color;
+                color: $white_color;        
+            }       
+        }
+     }
+     .task-list{
+         width: 80%;
+         ul{
+            margin: 0px;
+            padding: 0;
+            margin-left: 12px;
+            margin-top: 10px;
+         }
+         li{
+            list-style: none;
+            text-align: left;
+            padding: 10px;
+         }
+         li{
+            text-align: center;
+            border-top: 1px solid $primary_color;
+            &:last-of-type{
+                border-bottom: 1px solid $primary_color;
+            }
+        }
+     }
+}
+
+.addnew-List-item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .material-icons{
+        color: red;
+        cursor: pointer;
+    }
+    .strike{
+        text-decoration:line-through;
+    }
+}

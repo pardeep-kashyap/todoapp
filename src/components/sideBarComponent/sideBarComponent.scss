@@ -1,0 +1,32 @@
+.main-menu{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.main-menu {
+    a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    }
+    li{
+    color: #11bee7;
+    text-align: center;
+    border-top: 1px solid #11bee7;
+    &:last-of-type{
+        border-bottom: 1px solid #11bee7;
+    }
+    cursor: pointer;
+    &.active{
+        color: #ffffff;
+        background-color: #11bee7;    
+        }
+    }
+}
+  
+.main-menu a:hover {
+    color: #ffffff;
+    background-color: #11bee7;
+}
+  
