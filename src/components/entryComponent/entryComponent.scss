@@ -9,14 +9,37 @@
     background: linear-gradient(135deg, $primary_color, $secondary_gradient);
     width: 400px;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    .logo{
+        position: absolute;
+        top: 0;
+        left: 25px;
+        h1{
+            color: $white_color;
+        }
+    }
+    .sign-up-button{
+        position: absolute;
+        bottom: 50px;
+        a{
+            text-decoration: none;
+            button{
+                background-color: $link_color;
+                color: $white_color;
+    
+            }   
+        }
+    }
 }
 .right-section{
      width: calc(100% - 400px);
      display: flex;
      align-items: center;
+     flex-direction:column;
+     color:#11bee7;
     img{
       margin: 0 auto;
+      height: 445px;
     }
 }

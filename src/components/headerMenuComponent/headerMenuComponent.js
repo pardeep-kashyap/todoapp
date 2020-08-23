@@ -1,5 +1,5 @@
 import React from 'react';
-import { Icon } from '@material-ui/core';
+import { Icon, Avatar } from '@material-ui/core';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import './headerMenuComponent.scss';
@@ -13,7 +13,8 @@ export default class HeaderMenuComponent extends React.Component {
         this.state={
             anchorEl:null,
             setAnchorEl:null,
-            open: false
+            open: false,
+            name:''
         }
         
     }
@@ -26,6 +27,7 @@ export default class HeaderMenuComponent extends React.Component {
   
     handleClose = (name) => {
         this.setState({ anchorEl: null });
+        localStorage.removeItem("user");
     };
 
     
@@ -45,7 +47,8 @@ export default class HeaderMenuComponent extends React.Component {
                 </Menu>
             </div>
             <div className="action-section">
-                <Icon  style={{cursor:'pointer'}} onClick={this.handleClick}>more_vert</Icon>
+                  <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg"  />
+
             </div>
             </div>
         )
