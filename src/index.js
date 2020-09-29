@@ -9,7 +9,7 @@ import './index.scss';
 import App from './App';
 
 import Axios from 'axios';
-Axios.defaults.baseURL="http://localhost:5000/api/";
+Axios.defaults.baseURL="/api/";
 Axios.defaults.headers.post['Content-Type']= 'application/json';
 
 const store = createStore(reducer);
