@@ -1,6 +1,6 @@
 /* eslint-disable react/style-prop-object */
 import React from 'react';
-import './profileSectionComponent.scss';
+import classes from './profileSectionComponent.scss';
 import avatar from './../assets/images/avatar.png';
 
 class ProfileSectionComponent extends React.Component{
@@ -15,7 +15,7 @@ class ProfileSectionComponent extends React.Component{
 
     render(){
         return (
-                 <header className="avatar">
+                 <header className={classes.avatar}>
                     <img src={avatar} alt={this.state.userInformation.name}/>
                         <h2>{this.state.userInformation.name}</h2>
                 </header>

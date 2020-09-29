@@ -2,3 +2,20 @@ $primary_color: #11bee7;
 $secondary_gradient:#5067c5;
 $white_color:#ffffff;
 $link_color:#61BD4F;
+
+@mixin main-Bg-Color {
+    background: linear-gradient(135deg, $primary_color, $secondary_gradient);-color: $primary_color;
+}
+
+
+@mixin  mobile-screen {
+    @media  screen and (max-width: 550px  ) {
+        @content;
+    }
+}
+
+@mixin max-width {
+    @media screen and (max-width: 950px) {
+        @content;
+    }
+}

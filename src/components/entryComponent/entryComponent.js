@@ -1,6 +1,6 @@
 import React from 'react';
 import mainEntryBanner from './../assets/svg/entry-banner.svg';
-import './entryComponent.scss'
+import classes from './entryComponent.scss'
 import {NameSubmitComponent} from './../nameSubmitComponent/nameSubmitComponent.js'
 import { Button } from '@material-ui/core'
 import { NavLink } from 'react-router-dom/cjs/react-router-dom.min';
@@ -11,13 +11,13 @@ class EntryComponent extends React.Component {
         super();
     }
     render(){
-        return <div className="main-section">
-               <div className="left-section">   
-                <div className="logo">
+        return <div className={classes.mainSection}>
+               <div className={classes.leftSection}>   
+                <div className={classes.logo}>
                  <h1>#LOGO</h1>
                 </div>
                   <NameSubmitComponent />
-                  <div className="sign-up-button">
+                  <div className={classes.signUpButton}>
                 <NavLink
                     to={{
                         pathname:'/new-user',
@@ -31,8 +31,8 @@ class EntryComponent extends React.Component {
                 </NavLink> 
                 </div>
                </div> 
-               <div className="right-section">
-                    <h1>Set your goal and just plan it</h1>
+               <div className={classes.rightSection}>
+                    <p>Set your goal and just plan it</p>
                     <img src={mainEntryBanner} alt="To do list" />
                </div>                
         </div>

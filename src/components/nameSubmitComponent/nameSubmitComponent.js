@@ -4,6 +4,7 @@ import './nameSubmitComponent.scss'
 import { useHistory } from "react-router-dom";
 import Axios from 'axios';
 import Fade from '@material-ui/core/Fade';
+import classes from './nameSubmitComponent.scss';
 
 
 
@@ -17,19 +18,19 @@ function NameSubmitComponent (){
         
 
         const userInformation = {
-            name:'',
-            email:''
+            username:'',
+            password:''
         }  
         
         function handleSubmit () {
             if(userInformation.username !== '' && userInformation.password !== ''){
                   Axios.post(`user/login`,userInformation).then(success=>{
                      console.log(success);
-                     if(success.data.status){
+                     if(success.data.status === 'success'){
                         localStorage.setItem("user",JSON.stringify(success.data.loginDetail))
                         setState({
                             message:''
-                        })
+                        });
                         handleClick(Fade,'Login Successful');
                         setTimeout(()=>{
                             history.push('/home')
@@ -48,11 +49,11 @@ function NameSubmitComponent (){
          }
         
         function onChangeNameText(event){
-            userInformation.name=event.target.value;
+            userInformation.username=event.target.value;
         }
 
         function onChangeEmailText(event){
-            userInformation.email=event.target.value;
+            userInformation.password=event.target.value;
         }
 
 
@@ -65,9 +66,9 @@ function NameSubmitComponent (){
               });
         };
       
-        return (<div className="NameSubmitComponentClass">
-        <form  className="w-16 md:w-32 lg:w-48" onSubmit={handleSubmit}>
-        <TextField id="outlined-basic" label="Name" onChange={onChangeNameText} variant="outlined" />
+        return (<div className={classes.NameSubmitComponentClass}>
+        <form  onSubmit={handleSubmit}>
+        <TextField id="outlined-basic" label="Username" onChange={onChangeNameText} variant="outlined" />
         <TextField id="outlined-basic" type="password" label="Password" onChange={onChangeEmailText} variant="outlined" />
         <Link>
             Forgot password ?

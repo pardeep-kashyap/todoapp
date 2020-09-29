@@ -11,13 +11,23 @@
         display: flex;
         flex-direction: column;
         width: calc(100% - 50px);
-        .MuiFormControl-root{
+        div{
             margin-top: 10px;
         }
-        .MuiButtonBase-root{
+        button{
             margin-top: 25px;
-            background-color: $primary_color;
+            background: linear-gradient(135deg, $primary_color, $secondary_gradient);-color: $primary_color;
             color: $white_color;        
+            &:hover{
+                color: $primary_color;
+                background-color: $white_color;        
+            }
         }
+    }
+}
+
+@include max-width {
+    .NameSubmitComponentClass{
+        height: 400px;
     }
 }

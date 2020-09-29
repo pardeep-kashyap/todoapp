@@ -2,7 +2,6 @@
 import React from 'react';
 import './homeComponent.scss'
 import  SideBarComponent  from '../sideBarComponent/sideBarComponent';
-import { ProfileSectionComponent } from '../profileSectionComponent/profileSectionComponent';
 import { ContentSectionComponent } from './../contentSectionComponent/contentSectionComponent';
 class HomeComponent extends React.Component{
     
@@ -23,14 +22,12 @@ class HomeComponent extends React.Component{
     render(){
         let style={
             'display':'flex',
-            'flexDirection': 'row'
+            'flexDirection': 'row',
+            'height':'100%'
         }
         return ( 
-            <div style={style} >
-            <nav>
-              <ProfileSectionComponent />
+            <div style={style}>
               <SideBarComponent activateMenu={this.state.activateMenu} menuChangeHandler={this.menuChanged}  />
-            </nav>
                <ContentSectionComponent activateMenu={this.state.activateMenu} />                
             </div>
 

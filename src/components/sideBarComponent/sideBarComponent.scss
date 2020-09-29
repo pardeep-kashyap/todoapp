@@ -1,32 +1,112 @@
-.main-menu{
+@import '../styles/variable.scss';
+nav{
+    background-color: $white_color;
+    color: $primary_color;
+    display: flex;
+    flex-direction: column;;
+    border-right: 1px solid $primary_color;
+.sideBar{
+    width: 300px;
+    height: 100%;
+    min-width: 225px;
+}
+.mainMenu{
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-.main-menu {
+.logo{
+    top: 0;
+    h1{
+        color: $primary_color;
+    }
+    span{
+        display: none;
+    }
+}
+
+.mainMenu {
     a {
-    display: block;
-    padding: 10px;
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
     text-decoration: none;
-    }
-    li{
-    color: #11bee7;
-    text-align: center;
-    border-top: 1px solid #11bee7;
-    &:last-of-type{
-        border-bottom: 1px solid #11bee7;
-    }
-    cursor: pointer;
-    &.active{
-        color: #ffffff;
-        background-color: #11bee7;    
+    font-weight: bold;
+    font-size:22px;
+    color: black;
+        span{
+            padding-right: 5px;
         }
     }
 }
   
-.main-menu a:hover {
-    color: #ffffff;
-    background-color: #11bee7;
+.mainMenu a:hover {
+    color: $white_color;
+    background-color: $primary_color;;
 }
-  
+ 
+.selected{
+    color: $white_color !important;
+    background-color: $primary_color; 
+}   
+.closeIcon{
+    display: none;
+}
+}
+
+.mobile{
+    &.close{
+        display: block;
+    }
+    &.open{
+        .sideBar{
+            display: block;
+        }
+    }
+    
+}
+
+
+
+@include max-width {
+    .sideBar{
+        position: absolute;
+        width: 200px;
+        background: white;
+        z-index: 1;
+        box-shadow: 2px 0 9px -3px black;
+        .closeIcon{
+            display: flex;
+            justify-content: flex-end;
+        }
+    }
+    .logo{
+        display: flex;
+        justify-content: space-around;
+        span{
+            display: block !important;
+            margin-left: auto;
+            padding: 5px;
+            cursor: pointer;
+            :hover{
+                background-color: red;
+            }
+        }
+        h1{
+            font-size: 2em;
+            margin-bottom: 2em;
+        }
+    }
+    .mobile{
+        &.close{
+            display: none !important;
+        }
+        &.open{
+            .sideBar{
+                display: block;
+            }
+        }
+        
+    }
+}

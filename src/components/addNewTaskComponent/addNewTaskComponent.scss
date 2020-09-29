@@ -1,27 +1,32 @@
 @import './../styles//variable.scss';
 
-.addnew-container{
-    .text-box-section{
+.addnewContainer{
+    .textBoxSection{
         padding: 0px 10px 0 10px;
         form{
             display: flex;
             justify-content: flex-start;
-            .MuiTextField-root{
+            margin-left: 1em;
+            .MuiTextFieldRoot{
                 width: 80%;
             }
-            Button{
+            button{
                 margin-left: 10px;
                 height: 35px;
                 align-self: flex-end
             }    
-            .MuiButtonBase-root{
+            .MuiButtonBaseRootButton{
                 margin-top: 25px;
                 background-color: $link_color;
                 color: $white_color;        
-            }       
+            }   
+            button:hover{
+                color: $link_color;
+                background-color: $white_color;    
+            }  
         }
      }
-     .task-list{
+     .taskList{
          width: 80%;
          ul{
             margin: 0px;
@@ -36,23 +41,40 @@
          }
          li{
             text-align: center;
-            border-top: 1px solid $primary_color;
-            &:last-of-type{
-                border-bottom: 1px solid $primary_color;
-            }
+            width: 600px;
+            border: 1px solid lightgray;
+            min-width: 400px;
+            background: white;
+            margin: 1em;
         }
      }
 }
 
-.addnew-List-item{
+.addnewListItem{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    .material-icons{
+    .materialIcons{
         color: red;
         cursor: pointer;
     }
     .strike{
         text-decoration:line-through;
+    }
+    .timeAgo{
+        margin-left: auto;
+        color: gray;
+        b{
+            font-weight: 500;
+        }
+    }
+    .star{
+        cursor: pointer;
+        margin-left: 10px;
+        margin-right: 10px;
+        color: gray;
+        &.important{
+            color: #f4c94b;
+        }
     }
 }

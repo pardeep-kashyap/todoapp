@@ -1,23 +1,71 @@
-import React from 'react';
-import './sideBarComponent.scss'
-function sideBarComponent (props){
-    
-    function handleClick(name) {
-        props.menuChangeHandler(name); // pass any argument to the callback
-      }
+import React from "react";
+import classes from "./sideBarComponent.scss";
+import Icon from "@material-ui/core/Icon";
+import { withRouter, NavLink } from "react-router-dom";
+import { connect } from "react-redux";
+import * as actionTypes  from './../../store/action';
 
-       let listItem = MenuList.map((menu)=> <li className={(props.activateMenu === menu.value)?'active':''} onClick={()=>handleClick(menu.value)} key={menu.id}><a href={menu.link}>{menu.name}</a></li>)
-       return (
-                <ul className="main-menu">
-                    {listItem}
-                </ul>
-        )
+function sideBarComponent(props) {
+  function handleClick(name) {
+    props.menuChangeHandler(name); // pass any argument to the callback
+  }
+
+  function toggleMenu(){
+    props.onToggleMenu()
+  }
+
+  let listItem = MenuList.map((menu) => (
+    <li onClick={() => handleClick(menu.route)} key={menu.id}>
+      <NavLink
+        to={{
+          pathname: menu.route,
+        }}
+        className={
+          props.location.pathname === menu.route ? classes.selected : ""
+        }
+        exact
+      >
+        <Icon>{menu.icon} </Icon> {menu.name}
+      </NavLink>
+    </li>
+  ));
+
+  return (
+    <nav  className={`${classes.mobile} ${
+      props.sideMenu.opened ? classes.open : classes.close
+    } `}>
+      <div
+        className={classes.sideBar}
+      > 
+        <div className={classes.logo}>
+          <h1>#LOGO</h1>
+          <span class="material-icons" onClick={()=>toggleMenu()}>
+          close
+        </span>
+        </div>
+        <ul className={classes.mainMenu}>{listItem}</ul>
+      </div>
+    </nav>
+  );
 }
 
-export default sideBarComponent;
+const mapStateToProps = (state) => {
+  return {
+    sideMenu: state.sideMenu,
+  };
+};
+const mapDispatchToProps = dispatch => {
+  return {
+      onToggleMenu: () => dispatch({type: actionTypes.TOGGLE_MENU}),
+  }
+  };
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(withRouter(sideBarComponent));
+
 const MenuList = [
-    { id:1,'name':'Today' ,value:'today'},
-    { id:2,'name':'Planned',value:'planned'},
-    { id:3,'name':'Important',value:'important'},
-    { id:4,'name':'All',value:'all'},
+  { id: 1, name: "Home", route: "/home", icon: "home" },
+  { id: 3, name: "Notes", route: "important", icon: "sticky_note_2" },
+  { id: 4, name: "All", route: "all" },
 ];

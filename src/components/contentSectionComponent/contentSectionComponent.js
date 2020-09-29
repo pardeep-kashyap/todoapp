@@ -1,5 +1,8 @@
 import  React  from 'react';
-import { AddNewTaskComponent } from './../addNewTaskComponent/addNewTaskComponent';
+import  TaskPreviewComponent  from '../taskPreviewComponent/taskPreviewComponent';
+import  AddNewTaskComponent  from './../addNewTaskComponent/addNewTaskComponent';
+import HeaderMenuComponent from './../headerMenuComponent/headerMenuComponent';
+import classes from './contentSectionComponent.scss';
 
 class ContentSectionComponent extends React.Component{
 
@@ -10,9 +13,13 @@ class ContentSectionComponent extends React.Component{
 
     render() {
       return (
-        <div style={{width:'100%'}}>
-           <AddNewTaskComponent  activateMenu={this.props.activateMenu}/>
-        </div>
+                <div className={classes.contentSection}>
+                    <HeaderMenuComponent activateMenu={this.props.activateMenu} />
+                <div className={classes.taskSection}>
+                <AddNewTaskComponent activateMenu={this.props.activateMenu}/>
+                <TaskPreviewComponent/>
+                </div>
+                </div>    
     )}
 }
 

@@ -1,6 +1,6 @@
 import React from 'react';
-import './signUpComponent.scss';
-import { Button,TextField, InputAdornment } from '@material-ui/core';
+import classes from './signUpComponent.scss';
+import { Button,TextField } from '@material-ui/core';
 import signupleft  from './../assets/svg/signupleft.svg'
 import signupbtnRight  from './../assets/svg/signupbtnRight.svg'
 import Axios from 'axios';
@@ -96,17 +96,17 @@ class SignUpComponent extends React.Component{
     render(){
 
         return ( 
-            <div className="signUpComponent">
-            <div className="bottom-end">
+            <div className={classes.signUpComponent}>
+            <div className={classes.bottomEnd}>
                <img src={signupleft} alt="Explore "/>
                 <img src={signupbtnRight} alt="Explore "/>
             </div>
-            <div className="center">
-                 <div className="signup-form">
-                     <h1>Sign up for your account</h1>
-                     <form onSubmit={this.createUser}>
+            <div className={classes.center}>
+                 <div className={classes.signupForm}>
+                     <h1>Create your account</h1>
+                     <form className={classes.formFields} onSubmit={this.createUser}>
                      {
-                         Object.keys(this.state.signUpForm).map( (control,index)=> <TextField name={control} key={index} onChange={(event)=>this.onChangeNameText(control,event)} {...this.state.signUpForm[control]} />)
+                         Object.keys(this.state.signUpForm).map( (control,index)=> <TextField className={classes.MuiTextFieldRoot} name={control} key={index} onChange={(event)=>this.onChangeNameText(control,event)} {...this.state.signUpForm[control]} />)
                      }
                         <Button type="submit" variant="contained" >
                             Sign Up           

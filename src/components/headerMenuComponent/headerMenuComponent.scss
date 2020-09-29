@@ -1,7 +1,7 @@
 @import '../styles/variable.scss';
 
-.header-component{
-    background-color: $primary_color;
+.headerComponent{
+    @include main-Bg-Color;
     color: #fff;
     height: 100px;
     display: flex;
@@ -13,8 +13,13 @@
         display: flex;
         align-items: center;
         padding-right: 10px;
+        text-transform: capitalize;
+        cursor: pointer;
+        span{
+            margin-left: 5px;
+        }
     }
-    .tittle-section{
+    .tittleSection{
         padding-left: 10px;
         height: inherit;
         display: flex;
@@ -25,5 +30,17 @@
     }
     .MuiAvatar-root{
         padding: 0px;
+    } 
+    p{
+        display: none;
+    }
+}
+
+@include max-width {
+        p{
+        font-size: 2em !important;
+        display: flex !important;
+        align-items: center;
+        cursor: pointer;
     }
 }
