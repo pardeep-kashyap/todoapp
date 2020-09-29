@@ -1,5 +1,9 @@
 {
   "name": "to-do-app",
+  "description": "a really cool app",
+  "engines": {
+    "node": "12.x"
+  },
   "version": "0.1.0",
   "private": true,
   "dependencies": {
