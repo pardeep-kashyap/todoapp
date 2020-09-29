@@ -1,7 +1,7 @@
 // Configure Mongo
 const mongoose = require("mongoose");
 let database;
-const uri = 'mongodb://127.0.0.1:27017/toDoApp'
+const uri = process.env.MONGO_URL||'mongodb://127.0.0.1:27017/toDoApp'
 if (database) {
     return;
 }
