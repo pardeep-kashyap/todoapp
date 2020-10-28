@@ -9,10 +9,8 @@ import Checkbox from '@material-ui/core/Checkbox';
 import { withStyles } from '@material-ui/core/styles';
 import { green } from '@material-ui/core/colors';
 import {connect} from 'react-redux';
-import * as actionTypes  from './../../store/action'
+import * as actionTypes  from '../../store/actions/actionTypes'
 import { timeSinceText} from './../../utils/util';
-
-
 
 const GreenCheckbox = withStyles({
     root: {

@@ -1,7 +1,7 @@
 import React from 'react';
 import mainEntryBanner from './../assets/svg/entry-banner.svg';
 import classes from './entryComponent.scss'
-import {NameSubmitComponent} from './../nameSubmitComponent/nameSubmitComponent.js'
+import  AuthComponent from './../authComponent/AuthComponent'
 import { Button } from '@material-ui/core'
 import { NavLink } from 'react-router-dom/cjs/react-router-dom.min';
 
@@ -16,7 +16,7 @@ class EntryComponent extends React.Component {
                 <div className={classes.logo}>
                  <h1>#LOGO</h1>
                 </div>
-                  <NameSubmitComponent />
+                  <AuthComponent />
                   <div className={classes.signUpButton}>
                 <NavLink
                     to={{

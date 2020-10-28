@@ -3,7 +3,7 @@ import classes from "./sideBarComponent.scss";
 import Icon from "@material-ui/core/Icon";
 import { withRouter, NavLink } from "react-router-dom";
 import { connect } from "react-redux";
-import * as actionTypes  from './../../store/action';
+import * as action_index  from './../../store/actions/action_index';
 
 function sideBarComponent(props) {
   function handleClick(name) {
@@ -56,7 +56,7 @@ const mapStateToProps = (state) => {
 };
 const mapDispatchToProps = dispatch => {
   return {
-      onToggleMenu: () => dispatch({type: actionTypes.TOGGLE_MENU}),
+      onToggleMenu: () => dispatch(action_index.toggleSideMenu()),
   }
   };
 export default connect(

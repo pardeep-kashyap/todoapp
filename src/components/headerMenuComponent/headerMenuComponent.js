@@ -7,7 +7,8 @@ import {
     Link
   } from "react-router-dom";
   import { connect } from 'react-redux';
-  import * as actionTypes from '../../store/action';
+  import * as action_index  from './../../store/actions/action_index';
+
 
   class HeaderMenuComponent extends React.Component {
     // eslint-disable-next-line no-useless-constructor
@@ -80,7 +81,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = dispatch => {
 return {
-    onToggleMenu: () => dispatch({type: actionTypes.TOGGLE_MENU}),
+    onToggleMenu: () => dispatch(action_index.toggleSideMenu()),
 }
 };
   

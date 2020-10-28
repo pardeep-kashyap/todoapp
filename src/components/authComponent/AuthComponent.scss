@@ -1,6 +1,6 @@
 @import './../styles/variable.scss';
 
-.NameSubmitComponentClass{
+.AuthComponentClass{
     background: white;
     width: 350px;
     height: 300px;
@@ -27,7 +27,7 @@
 }
 
 @include max-width {
-    .NameSubmitComponentClass{
+    .AuthComponentClass{
         height: 400px;
     }
 }

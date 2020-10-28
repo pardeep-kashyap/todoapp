@@ -14,7 +14,7 @@ class ContentSectionComponent extends React.Component{
     render() {
       return (
                 <div className={classes.contentSection}>
-                    <HeaderMenuComponent activateMenu={this.props.activateMenu} />
+                <HeaderMenuComponent activateMenu={this.props.activateMenu} />
                 <div className={classes.taskSection}>
                 <AddNewTaskComponent activateMenu={this.props.activateMenu}/>
                 <TaskPreviewComponent/>
