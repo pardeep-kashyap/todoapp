@@ -1,45 +1,45 @@
-@import './../styles//variable.scss';
+@import './../../styles/variable.scss';
 
-.addnewContainer{
-    .textBoxSection{
+.addnewContainer {
+    .textBoxSection {
         padding: 0px 10px 0 10px;
-        form{
+        form {
             display: flex;
             justify-content: flex-start;
             margin-left: 1em;
-            .MuiTextFieldRoot{
+            .MuiTextFieldRoot {
                 width: 80%;
             }
-            button{
+            button {
                 margin-left: 10px;
                 height: 35px;
-                align-self: flex-end
-            }    
-            .MuiButtonBaseRootButton{
+                align-self: flex-end;
+            }
+            .MuiButtonBaseRootButton {
                 margin-top: 25px;
                 background-color: $link_color;
-                color: $white_color;        
-            }   
-            button:hover{
+                color: $white_color;
+            }
+            button:hover {
                 color: $link_color;
-                background-color: $white_color;    
-            }  
+                background-color: $white_color;
+            }
         }
-     }
-     .taskList{
-         width: 80%;
-         ul{
+    }
+    .taskList {
+        width: 80%;
+        ul {
             margin: 0px;
             padding: 0;
             margin-left: 12px;
             margin-top: 10px;
-         }
-         li{
+        }
+        li {
             list-style: none;
             text-align: left;
             padding: 10px;
-         }
-         li{
+        }
+        li {
             text-align: center;
             width: 600px;
             border: 1px solid lightgray;
@@ -47,33 +47,34 @@
             background: white;
             margin: 1em;
         }
-     }
+    }
 }
 
-.addnewListItem{
+.addnewListItem {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    .materialIcons{
+    cursor: pointer;
+    .materialIcons {
         color: red;
         cursor: pointer;
     }
-    .strike{
-        text-decoration:line-through;
+    .strike {
+        text-decoration: line-through;
     }
-    .timeAgo{
+    .timeAgo {
         margin-left: auto;
         color: gray;
-        b{
+        b {
             font-weight: 500;
         }
     }
-    .star{
+    .star {
         cursor: pointer;
         margin-left: 10px;
         margin-right: 10px;
         color: gray;
-        &.important{
+        &.important {
             color: #f4c94b;
         }
     }

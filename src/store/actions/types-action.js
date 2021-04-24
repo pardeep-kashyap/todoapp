@@ -1,0 +1,12 @@
+export const TOGGLE_MENU = 'MENU_TOGGLE';
+export const SHOW_TASK_PREVIEW = 'SHOW_TASK_PREVIEW';
+export const AUTH_START = 'AUTH_START';
+export const GOOGLE_AUTH_START = 'GOOGLE_AUTH_START';
+export const LOGOUT = 'LOGOUT';
+export const FETCH_TASKS = 'FETCH_TASKS';
+export const SET_TASKS = 'SET_TASKS';
+export const DELETE_TASK = 'DELETE_TASK';
+export const SAVE_NEW_TASK = 'SAVE_NEW_TASK';
+export const SET_TASK_NAME_INPUT = 'SET_TASK_NAME_INPUT';
+export const UPDATE_TASK = 'UPDATE_TASK';
+export const USER_SIGNUP = 'USER_SIGNUP';

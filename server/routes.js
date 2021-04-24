@@ -1,11 +1,12 @@
-const userAPI= require('./apis/user');
-const taskAPI= require('./apis/task');
+const {createNewUser,findUserByUsername,login,googleController} = require('./apis/userController');
+const { fetchAllTask, findOneAndUpdateTask, findOneAndDelete} = require('./apis/taskController');
 module.exports = function(app)
 {
-    app.post('/api/user/create',userAPI.createNewUser);
-    app.get('/api/user/find/username',userAPI.findUserByUsername);
-    app.post('/api/user/login',userAPI.login);
-    app.get('/api/task/all',taskAPI.fetchAllTask);
-    app.post('/api/task/save',taskAPI.findOneAndUpdateTask);
-    app.delete('/api/task/delete',taskAPI.findOneAndDelete);
+    app.post('/api/user/create',createNewUser);
+    app.get('/api/user/find/username',findUserByUsername);
+    app.post('/api/user/login',login);
+    app.post('/api/user/googleLogin',googleController);
+    app.get('/api/task/all',fetchAllTask);
+    app.post('/api/task/save',findOneAndUpdateTask);
+    app.delete('/api/task/delete',findOneAndDelete);
 }

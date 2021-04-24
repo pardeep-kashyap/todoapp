@@ -1,6 +1,7 @@
-import * as actionTypes from '../actions/actionTypes';
-
+import * as actionTypes from '../actions/types-action';
+import { updateObject } from './../../utils/util'
 const initialState={
+    taskNameTextBox:'',
     sideMenu:{
         opened:false
     },
@@ -11,8 +12,11 @@ const initialState={
         created_at:"",
         taskName:"",
         descriptions:"",
+        email:'',
+        
         status:false
-}
+    },
+    taskList:[]
 }
 
 const toggleMenu=(state,action)=>{
@@ -32,10 +36,20 @@ const showBox =(state,action)=>{
             }
 }
 
+const setTaskList = (state,action)=>{
+    state= updateObject(state,{taskList:action.taskList});   
+    if(action.taskList && action.taskList.length){
+        state= updateObject(state,{selectedObj:action.taskList[0]}); 
+    }
+    return state;
+}
+
 const reducer =(state=initialState,action)=>{
     switch(action.type){
         case actionTypes.TOGGLE_MENU:return toggleMenu(state,action);
-        case actionTypes.SHOW_BOX:return showBox(state,action);
+        case actionTypes.SHOW_TASK_PREVIEW:return showBox(state,action);
+        case actionTypes.SET_TASKS:return setTaskList(state,action); 
+        case actionTypes.SET_TASK_NAME_INPUT:return updateObject(state,{taskNameTextBox:action.text})
         default:return state;
     }
 }

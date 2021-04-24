@@ -1,112 +1,108 @@
-@import '../styles/variable.scss';
-nav{
+@import './../../styles/variable.scss';
+nav {
     background-color: $white_color;
     color: $primary_color;
     display: flex;
-    flex-direction: column;;
+    flex-direction: column;
     border-right: 1px solid $primary_color;
-.sideBar{
-    width: 300px;
-    height: 100%;
-    min-width: 225px;
-}
-.mainMenu{
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.logo{
-    top: 0;
-    h1{
-        color: $primary_color;
+    .sideBar {
+        width: 300px;
+        height: 100%;
+        min-width: 225px;
     }
-    span{
+    .mainMenu {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .logo {
+        top: 0;
+        h1 {
+            color: $primary_color;
+        }
+        span {
+            display: none;
+        }
+    }
+
+    .mainMenu {
+        a {
+            display: flex;
+            align-items: center;
+            padding: 10px 15px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 22px;
+            color: black;
+            span {
+                padding-right: 5px;
+            }
+        }
+    }
+
+    .mainMenu a:hover {
+        color: $white_color;
+        background-color: $primary_color;
+    }
+
+    .selected {
+        color: $white_color !important;
+        background-color: $primary_color;
+    }
+    .closeIcon {
         display: none;
     }
 }
 
-.mainMenu {
-    a {
-    display: flex;
-    align-items: center;
-    padding: 10px 15px;
-    text-decoration: none;
-    font-weight: bold;
-    font-size:22px;
-    color: black;
-        span{
-            padding-right: 5px;
-        }
-    }
-}
-  
-.mainMenu a:hover {
-    color: $white_color;
-    background-color: $primary_color;;
-}
- 
-.selected{
-    color: $white_color !important;
-    background-color: $primary_color; 
-}   
-.closeIcon{
-    display: none;
-}
-}
-
-.mobile{
-    &.close{
+.mobile {
+    &.close {
         display: block;
     }
-    &.open{
-        .sideBar{
+    &.open {
+        .sideBar {
             display: block;
         }
     }
-    
 }
 
-
-
 @include max-width {
-    .sideBar{
+    .sideBar {
         position: absolute;
         width: 200px;
         background: white;
         z-index: 1;
         box-shadow: 2px 0 9px -3px black;
-        .closeIcon{
+        .closeIcon {
             display: flex;
             justify-content: flex-end;
         }
     }
-    .logo{
+    .logo {
         display: flex;
         justify-content: space-around;
-        span{
+        span {
             display: block !important;
             margin-left: auto;
             padding: 5px;
             cursor: pointer;
-            :hover{
+            :hover {
                 background-color: red;
             }
         }
-        h1{
+        h1 {
             font-size: 2em;
             margin-bottom: 2em;
         }
     }
-    .mobile{
-        &.close{
+    .mobile {
+        &.close {
             display: none !important;
         }
-        &.open{
-            .sideBar{
+        &.open {
+            .sideBar {
                 display: block;
             }
         }
-        
     }
 }

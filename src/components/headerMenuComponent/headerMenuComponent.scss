@@ -1,6 +1,6 @@
-@import '../styles/variable.scss';
+@import './../../styles/variable.scss';
 
-.headerComponent{
+.headerComponent {
     @include main-Bg-Color;
     color: #fff;
     height: 100px;
@@ -8,36 +8,36 @@
     justify-content: space-between;
     border-bottom: 1px solid $primary_color;
     margin-bottom: 10px;
-    div:last-child{
+    div:last-child {
         margin-left: auto;
         display: flex;
         align-items: center;
         padding-right: 10px;
         text-transform: capitalize;
         cursor: pointer;
-        span{
+        span {
             margin-left: 5px;
         }
     }
-    .tittleSection{
+    .tittleSection {
         padding-left: 10px;
         height: inherit;
         display: flex;
         align-items: center;
     }
-    .MuiIcon-root{
-        font-size: 2em  ;
+    .MuiIcon-root {
+        font-size: 2em;
     }
-    .MuiAvatar-root{
+    .MuiAvatar-root {
         padding: 0px;
-    } 
-    p{
+    }
+    p {
         display: none;
     }
 }
 
 @include max-width {
-        p{
+    p {
         font-size: 2em !important;
         display: flex !important;
         align-items: center;

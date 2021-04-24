@@ -1,11 +1,12 @@
-var Task = require('./../models/Task-model');
+var Task = require('../models/Task-model');
 const mongoose  = require('mongoose');
 const fetchAllTask =async (req,res)=>{
     let task={};
     if(req.query.taskId){
-        task={
-            _id:req.query.taskId
-        }
+        task._id=req.query.taskId
+    }
+    if(req.query.email){
+        task.email=req.query.email
     }
     try{
         let response= await Task.find(task).sort({ 'created_at' : -1 }).exec();

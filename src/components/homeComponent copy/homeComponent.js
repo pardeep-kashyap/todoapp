@@ -2,7 +2,7 @@
 import React from "react";
 import classes from "./homeComponent.scss";
 import SideBarComponent from "../sideBarComponent/sideBarComponent";
-import { ContentSectionComponent } from "./../contentSectionComponent/contentSectionComponent";
+import { ContentSectionComponent } from "../contentSectionComponent/contentSectionComponent";
 import { useState } from 'react';
 
 export default function HomeComponent() {

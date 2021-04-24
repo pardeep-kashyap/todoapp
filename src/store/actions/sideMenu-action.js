@@ -1,4 +1,4 @@
-import { TOGGLE_MENU } from "./actionTypes"
+import { TOGGLE_MENU } from "./types-action"
 
 export const toggleSideMenu=()=>{
     return {

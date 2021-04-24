@@ -1,0 +1,25 @@
+.activityDashboardComponent {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    padding: 50px;
+    padding-top: 10px;
+    margin-top: -10px;
+    background: white;
+    .Row {
+        display: flex;
+    }
+    .list {
+        height: 65px;
+        width: 425px;
+        border-bottom: 1px solid #5fbfe8;
+        padding-top: 10px;
+        b {
+            font-size: 20px;
+        }
+        list-style: none;
+        span {
+            padding-right: 10px;
+        }
+    }
+}

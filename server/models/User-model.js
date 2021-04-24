@@ -16,6 +16,7 @@ const UserSchema = new Schema({
     lastName:String,
     email:String,
     age:Number,
+    picture:String
 });
 UserSchema.pre('save', function(next) {
     var user = this;

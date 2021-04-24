@@ -7,9 +7,9 @@ import { Checkbox, Icon, Tooltip, withStyles } from "@material-ui/core";
 import { green } from '@material-ui/core/colors';
 import {connect} from "react-redux";
 import { Button } from '@material-ui/core';
-import Axios from 'axios';
 import Fade from '@material-ui/core/Fade';
 import { timeSinceText} from './../../utils/util';
+import * as actions  from '../../store/actions/index-action'
 
 
 
@@ -42,20 +42,11 @@ class TaskPreviewComponent extends React.Component {
           this.setState({ descriptions: nextProps.selectedObj.descriptions });
         }
     }
+    
     postTask=()=>{
         delete this.props.selectedObj.updated_at;
         this.props.selectedObj.descriptions=this.state.descriptions;
-        Axios.post('task/save',this.props.selectedObj).then((response)=>{
-            console.log(response);
-            if(response.data.success){
-                console.log("Save !")
-                this.setState({
-                    message:'Description Saved Successfully'
-                })
-            }
-        }).catch((error)=>{
-            console.log(error);
-        });
+        this.props.updateTask(this.props.selectedObj);
     }
     
     handleTaskClick(key){
@@ -113,8 +104,13 @@ const mapStateToProps = (state) => {
     };
 };
 
+const mapDispatchToProps = dispatch =>{
+    return{
+        updateTask:(task)=>dispatch(actions.updateTask(task)),
+    }
+}
 export default connect(
 mapStateToProps,
-null
+mapDispatchToProps
 )(TaskPreviewComponent);
 

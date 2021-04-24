@@ -7,6 +7,13 @@ const cors = require('cors');
 // Setup express app
 const app = express();
  // parse application/x-www-form-urlencoded
+
+
+ // Config dotev
+require('dotenv').config({
+    path: './config/config.env'
+})
+
 app.use(
     bodyParser.urlencoded({ extended: false })
 )

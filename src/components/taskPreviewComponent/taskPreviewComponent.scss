@@ -1,6 +1,6 @@
-@import '../styles/variable.scss';
+@import './../../styles/variable.scss';
 
-.TaskPreview{
+.TaskPreview {
     display: flex;
     align-items: center;
     width: 300px;
@@ -9,56 +9,56 @@
     background: white;
     padding: 1em;
     border: 1px solid lightgrey;
-    div{
+    div {
         width: 100%;
     }
 }
-.uploadSection{
+.uploadSection {
     display: flex;
     flex-direction: column;
     align-items: baseline;
     width: 100%;
     margin-top: 10px;
-    .MuiButtonBaseRootButton{
+    .MuiButtonBaseRootButton {
         background-color: $link_color;
-        color: $white_color;  
-        margin-top: 10px;  
-    } 
-    button:hover{
+        color: $white_color;
+        margin-top: 10px;
+    }
+    button:hover {
         color: $link_color;
-        background-color: $white_color;    
-    }  
+        background-color: $white_color;
+    }
 }
-.TaskTittle{
+.TaskTittle {
     display: flex;
     align-items: center;
     justify-content: space-around;
     padding: 0;
 }
 
-.star{
+.star {
     cursor: pointer;
     margin-left: 10px;
     margin-right: 10px;
     color: gray;
-    &.important{
+    &.important {
         color: #f4c94b;
     }
 }
 
-.strike{
-    text-decoration:line-through;
+.strike {
+    text-decoration: line-through;
 }
 
 @include max-width {
-.TaskInDetail{
-    width: 100%;
-    height: 100%;
-    top: 0;
-    display: flex;
-    .TaskPreview{
-        height: 250px;
-        margin: auto;
+    .TaskInDetail {
+        width: 100%;
+        height: 100%;
+        top: 0;
+        display: flex;
+        .TaskPreview {
+            height: 250px;
+            margin: auto;
+        }
     }
-} 
 }

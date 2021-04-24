@@ -5,6 +5,7 @@ const schemaOptions = {
   };
 const Task = new Schema({
     taskName:String,
+    email:String,
     descriptions:String,
     status:{
         type:Boolean,
